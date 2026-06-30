@@ -43,6 +43,10 @@ flex: 1;
  color: #6030b1;   
 }
 
+section:nth-child(even) {
+    background-color:#f8f8f8;
+}
+
 /* NAVIGATION BAR */
 
 nav {
@@ -148,4 +152,5 @@ nav {
 
 .about-me__img {
     width: 100%;
+    margin-top: 28px;
 }

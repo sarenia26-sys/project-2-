@@ -27,6 +27,11 @@ p {
 a {
     text-decoration: none;
     position: relative;
+    transition: opacity 300ms ease;
+}
+
+i:hover {
+   opacity:  o.7;
 }
 
 .link__hover-effect:after {
@@ -34,7 +39,7 @@ content: "";
 position: absolute;
 height: 3px;
 width: 0;
-bottom: -3px
+bottom: -3px;
 right: 0;
 transition: all 300ms ease;
 }
@@ -157,6 +162,19 @@ nav {
     overflow: hidden;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16);
     margin-bottom: 28px;
+    animation: animate-profile-picture 800ms 200ms  backwards;
+}
+
+@keyframes animate-profile-picture {
+    0% {
+        transform:scale(0);
+    }
+    80% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 .about-me__picture {
@@ -169,17 +187,34 @@ nav {
 
 .about-me__info--title {
     margin-bottom: 16px;
+    animation: fade-up 650ms 400ms backwards;
 }
 
 .about-me__info--para {
     font-size: 20px;
     margin-bottom: 28px;
+    animation: fade-up 650ms 600ms backwards;
 }
 
 .about-me__link {
     font-size: 28px;
     color: #242424;
     padding: 0 16px;
+}
+
+.about-me__links {
+    animation: fade-up 650ms 800ms backwards;
+}
+
+@keyframes fade-up {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .about-me__img--container {
@@ -191,6 +226,32 @@ nav {
 .about-me__img {
     width: 100%;
     margin-top: 28px;
+}
+
+@keyframes fade-in {
+0% {
+    opacity: 0;
+}
+100% {
+    opacity: 1;
+}
+}
+
+.wave {
+    display: inline-block;
+animation: animate-wave 500ms infinite ease-in-out;
+}
+
+@keyframes animate-wave {
+    0% {
+        transform: rotate(0);
+    }
+    50% {
+        transform: rotate(30deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
 }
 
 /*TECH - STACK*/
@@ -420,7 +481,7 @@ footer {
         display: none;
     }
 
-    .pproject__description--links {
+    .project__description--links {
         display: flex;
         justify-content: center;
     }
